@@ -24,10 +24,16 @@ window.addEventListener("load", function () {
     let currentQuestion = 0;
     let currentLetter = 0;
 
+    let currentError = 0;
+    let totalErrors = 0;
+
     let answerContainer = document.querySelector("#answer");
     let letters = document.querySelector("#letters");
     let currentQuestionElem = document.querySelector("#current_question");
     let totalQuestionsElem = document.querySelector("#total_questions");
+
+    let currentErrorElem = document.querySelector("#current_error");
+    let totalErrorsElem = document.querySelector("#total_errors");
 
     totalQuestionsElem.innerHTML = limitQuestions;
 
