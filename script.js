@@ -76,6 +76,8 @@ window.addEventListener("load", function () {
             		currentLetter = 0;
             		currentQuestion++;
 
+                    currentError = 0;
+
             		// если мы дошли до последнего вопроса
             		if (currentQuestion >= limitQuestions) {
             			letters.innerHTML = "<div class='alert alert-success'>Вы успешно справились со всеми заданиями!</div>";
@@ -83,7 +85,15 @@ window.addEventListener("load", function () {
                         displayCurrentQuestion();
 					}
 				}
-			} else {
+			} else if (btn.innerHTML != word[currentLetter]) {
+
+                currentErrorElem.innerHTML = currentError + 1;
+                currentError ++;
+
+                totalErrorsElem.innerHTML = totalErrors + 1;
+                totalErrors ++;
+
+
                 btn.classList.remove("btn-primary");
                 btn.classList.add("btn-danger");
 
