@@ -43,6 +43,8 @@ window.addEventListener("load", function () {
     	let wordArr = word.split("");
         shuffle(wordArr);
 
+        currentError = 0;
+
         for (let letter of wordArr) {
         	let btn = document.createElement("button");
         	btn.innerHTML = letter;
@@ -85,12 +87,12 @@ window.addEventListener("load", function () {
                         displayCurrentQuestion();
 					}
 				}
-			} else if (btn.innerHTML != word[currentLetter]) {
+			} else {
 
-                currentErrorElem.innerHTML = currentError + 1;
+                currentErrorElem.innerHTML = currentError+1;
                 currentError ++;
 
-                totalErrorsElem.innerHTML = totalErrors + 1;
+                totalErrorsElem.innerHTML = totalErrors+1;
                 totalErrors ++;
 
 
